@@ -1,0 +1,13 @@
+﻿<Window x:Class="WindowsMediaPlayer.View.deletePlaylist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Delete a playlist" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF2E3030">
+    <Grid>
+        <ComboBox Margin="0,29,0,0" Name="ComboPlaylist" HorizontalAlignment="Center"  
+         VerticalAlignment="Top" Width="194" Height="30">
+        </ComboBox>
+        <Button Name="DeletePlaylist" Width="80" Height="25"  
+         Content="Delete" Margin="0,206,0,0" Click="DeletePlaylist_Click" HorizontalAlignment="Center"/>
+
+    </Grid>
+</Window>

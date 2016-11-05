@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA5A9690-6195-4196-95EC-BD244CBF5374}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsMediaPlayer</RootNamespace>
+    <AssemblyName>WindowsMediaPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Resources\TagLib\Aac\AudioHeader.cs" />
+    <Compile Include="Resources\TagLib\Aac\BitStream.cs" />
+    <Compile Include="Resources\TagLib\Aac\File.cs" />
+    <Compile Include="Resources\TagLib\Aiff\File.cs" />
+    <Compile Include="Resources\TagLib\Aiff\StreamHeader.cs" />
+    <Compile Include="Resources\TagLib\Ape\File.cs" />
+    <Compile Include="Resources\TagLib\Ape\Footer.cs" />
+    <Compile Include="Resources\TagLib\Ape\Item.cs" />
+    <Compile Include="Resources\TagLib\Ape\StreamHeader.cs" />
+    <Compile Include="Resources\TagLib\Ape\Tag.cs" />
+    <Compile Include="Resources\TagLib\Asf\ContentDescriptionObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\ContentDescriptor.cs" />
+    <Compile Include="Resources\TagLib\Asf\DescriptionRecord.cs" />
+    <Compile Include="Resources\TagLib\Asf\ExtendedContentDescriptionObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\File.cs" />
+    <Compile Include="Resources\TagLib\Asf\FilePropertiesObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\Guid.cs" />
+    <Compile Include="Resources\TagLib\Asf\HeaderExtensionObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\HeaderObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\MetadataLibraryObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\Object.cs" />
+    <Compile Include="Resources\TagLib\Asf\PaddingObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\StreamPropertiesObject.cs" />
+    <Compile Include="Resources\TagLib\Asf\Tag.cs" />
+    <Compile Include="Resources\TagLib\Asf\UnknownObject.cs" />
+    <Compile Include="Resources\TagLib\Audible\File.cs" />
+    <Compile Include="Resources\TagLib\Audible\Tag.cs" />
+    <Compile Include="Resources\TagLib\ByteVector.cs" />
+    <Compile Include="Resources\TagLib\ByteVectorList.cs" />
+    <Compile Include="Resources\TagLib\CombinedTag.cs" />
+    <Compile Include="Resources\TagLib\CorruptFileException.cs" />
+    <Compile Include="Resources\TagLib\Debugger.cs" />
+    <Compile Include="Resources\TagLib\File.cs" />
+    <Compile Include="Resources\TagLib\FileTypes.cs" />
+    <Compile Include="Resources\TagLib\Flac\Block.cs" />
+    <Compile Include="Resources\TagLib\Flac\BlockHeader.cs" />
+    <Compile Include="Resources\TagLib\Flac\File.cs" />
+    <Compile Include="Resources\TagLib\Flac\Picture.cs" />
+    <Compile Include="Resources\TagLib\Flac\StreamHeader.cs" />
+    <Compile Include="Resources\TagLib\Genres.cs" />
+    <Compile Include="Resources\TagLib\Gif\Codec.cs" />
+    <Compile Include="Resources\TagLib\Gif\File.cs" />
+    <Compile Include="Resources\TagLib\Gif\GifCommentTag.cs" />
+    <Compile Include="Resources\TagLib\ICodec.cs" />
+    <Compile Include="Resources\TagLib\Id3v1\StringHandler.cs" />
+    <Compile Include="Resources\TagLib\Id3v1\Tag.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\ExtendedHeader.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Footer.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\FrameFactory.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\FrameHeader.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\AttachedPictureFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\CommentsFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\GeneralEncapsulatedObjectFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\MusicCdIdentifierFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\PlayCountFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\PopularimeterFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\PrivateFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\RelativeVolumeFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\SynchronizedLyricsFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\TermsOfUseFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\TextIdentificationFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\UniqueFileIdentifierFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\UnknownFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Frames\UnsynchronisedLyricsFrame.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\FrameTypes.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Header.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\SynchData.cs" />
+    <Compile Include="Resources\TagLib\Id3v2\Tag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\ByteIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\ByteVectorIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\LongArrayIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\LongIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\MakernoteIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\Rational.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\RationalArrayIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\RationalIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SByteIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\ShortArrayIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\ShortIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SLongArrayIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SLongIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SRational.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SRationalArrayIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SRationalIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SShortArrayIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SShortIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\StringIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\StripOffsetsIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SubIFDArrayEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\SubIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\ThumbnailDataIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\UndefinedIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\Entries\UserCommentIFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDDirectory.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDEntry.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDEntryType.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDReader.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDRenderer.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDStructure.cs" />
+    <Compile Include="Resources\TagLib\IFD\IFDTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Makernotes\Nikon3MakernoteReader.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\CanonFileInfoEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\CanonMakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\CanonPictureInfoEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\ExifEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\GPSEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\IFDEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\IOPEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\Nikon3MakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonIsoInfoEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonLensData3EntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonPictureControlEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonPreviewMakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonShotInfoEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonVibrationReductionEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\NikonWorldTimeEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\OlympusMakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\PanasonicMakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\PentaxMakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IFD\Tags\SonyMakerNoteEntryTag.cs" />
+    <Compile Include="Resources\TagLib\IIM\IIMReader.cs" />
+    <Compile Include="Resources\TagLib\IIM\IIMTag.cs" />
+    <Compile Include="Resources\TagLib\Image\Codec.cs" />
+    <Compile Include="Resources\TagLib\Image\CombinedImageTag.cs" />
+    <Compile Include="Resources\TagLib\Image\File.cs" />
+    <Compile Include="Resources\TagLib\Image\ImageBlockFile.cs" />
+    <Compile Include="Resources\TagLib\Image\ImageOrientation.cs" />
+    <Compile Include="Resources\TagLib\Image\ImageTag.cs" />
+    <Compile Include="Resources\TagLib\Image\NoMetadata\File.cs" />
+    <Compile Include="Resources\TagLib\Jpeg\Codec.cs" />
+    <Compile Include="Resources\TagLib\Jpeg\File.cs" />
+    <Compile Include="Resources\TagLib\Jpeg\JpegCommentTag.cs" />
+    <Compile Include="Resources\TagLib\Jpeg\Marker.cs" />
+    <Compile Include="Resources\TagLib\Jpeg\Table.cs" />
+    <Compile Include="Resources\TagLib\ListBase.cs" />
+    <Compile Include="Resources\TagLib\Matroska\AudioTrack.cs" />
+    <Compile Include="Resources\TagLib\Matroska\EBMLElement.cs" />
+    <Compile Include="Resources\TagLib\Matroska\EBMLIDs.cs" />
+    <Compile Include="Resources\TagLib\Matroska\File.cs" />
+    <Compile Include="Resources\TagLib\Matroska\MatroskaIDs.cs" />
+    <Compile Include="Resources\TagLib\Matroska\SubtitleTrack.cs" />
+    <Compile Include="Resources\TagLib\Matroska\Tag.cs" />
+    <Compile Include="Resources\TagLib\Matroska\Track.cs" />
+    <Compile Include="Resources\TagLib\Matroska\VideoTrack.cs" />
+    <Compile Include="Resources\TagLib\Mpc\File.cs" />
+    <Compile Include="Resources\TagLib\Mpc\StreamHeader.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\AppleTag.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Box.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\AppleAdditionalInfoBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\AppleAnnotationBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\AppleDataBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\AppleElementaryStreamDescriptor.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\AppleItemListBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\FullBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoAudioSampleEntry.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoChunkLargeOffsetBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoChunkOffsetBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoFreeSpaceBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoHandlerBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoMetaBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoMovieHeaderBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoSampleDescriptionBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoSampleEntry.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoSampleTableBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoUserDataBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\IsoVisualSampleEntry.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\TextBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\UnknownBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\Boxes\UrlBox.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\BoxFactory.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\BoxHeader.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\BoxTypes.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\File.cs" />
+    <Compile Include="Resources\TagLib\Mpeg4\FileParser.cs" />
+    <Compile Include="Resources\TagLib\Mpeg\AudioFile.cs" />
+    <Compile Include="Resources\TagLib\Mpeg\AudioHeader.cs" />
+    <Compile Include="Resources\TagLib\Mpeg\File.cs" />
+    <Compile Include="Resources\TagLib\Mpeg\VBRIHeader.cs" />
+    <Compile Include="Resources\TagLib\Mpeg\VideoHeader.cs" />
+    <Compile Include="Resources\TagLib\Mpeg\XingHeader.cs" />
+    <Compile Include="Resources\TagLib\NonContainer\EndTag.cs" />
+    <Compile Include="Resources\TagLib\NonContainer\File.cs" />
+    <Compile Include="Resources\TagLib\NonContainer\StartTag.cs" />
+    <Compile Include="Resources\TagLib\NonContainer\Tag.cs" />
+    <Compile Include="Resources\TagLib\Ogg\Bitstream.cs" />
+    <Compile Include="Resources\TagLib\Ogg\Codec.cs" />
+    <Compile Include="Resources\TagLib\Ogg\Codecs\Theora.cs" />
+    <Compile Include="Resources\TagLib\Ogg\Codecs\Vorbis.cs" />
+    <Compile Include="Resources\TagLib\Ogg\File.cs" />
+    <Compile Include="Resources\TagLib\Ogg\GroupedComment.cs" />
+    <Compile Include="Resources\TagLib\Ogg\Page.cs" />
+    <Compile Include="Resources\TagLib\Ogg\PageHeader.cs" />
+    <Compile Include="Resources\TagLib\Ogg\Paginator.cs" />
+    <Compile Include="Resources\TagLib\Ogg\XiphComment.cs" />
+    <Compile Include="Resources\TagLib\Picture.cs" />
+    <Compile Include="Resources\TagLib\Png\Codec.cs" />
+    <Compile Include="Resources\TagLib\Png\File.cs" />
+    <Compile Include="Resources\TagLib\Png\PngTag.cs" />
+    <Compile Include="Resources\TagLib\Properties.cs" />
+    <Compile Include="Resources\TagLib\ReadOnlyByteVector.cs" />
+    <Compile Include="Resources\TagLib\Riff\AviHeaderList.cs" />
+    <Compile Include="Resources\TagLib\Riff\AviStream.cs" />
+    <Compile Include="Resources\TagLib\Riff\BitmapInfoHeader.cs" />
+    <Compile Include="Resources\TagLib\Riff\DivXTag.cs" />
+    <Compile Include="Resources\TagLib\Riff\File.cs" />
+    <Compile Include="Resources\TagLib\Riff\InfoTag.cs" />
+    <Compile Include="Resources\TagLib\Riff\List.cs" />
+    <Compile Include="Resources\TagLib\Riff\ListTag.cs" />
+    <Compile Include="Resources\TagLib\Riff\MovieIdTag.cs" />
+    <Compile Include="Resources\TagLib\Riff\WaveFormatEx.cs" />
+    <Compile Include="Resources\TagLib\StringList.cs" />
+    <Compile Include="Resources\TagLib\SupportedMimeType.cs" />
+    <Compile Include="Resources\TagLib\Tag.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Arw\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\BaseTiffFile.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Codec.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Cr2\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Dng\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Nef\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Pef\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Rw2\File.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Rw2\IFDReader.cs" />
+    <Compile Include="Resources\TagLib\Tiff\Rw2\IFDTag.cs" />
+    <Compile Include="Resources\TagLib\UnsupportedFormatException.cs" />
+    <Compile Include="Resources\TagLib\WavPack\File.cs" />
+    <Compile Include="Resources\TagLib\WavPack\StreamHeader.cs" />
+    <Compile Include="Resources\TagLib\Xmp\XmlNodeExtensions.cs" />
+    <Compile Include="Resources\TagLib\Xmp\XmpNode.cs" />
+    <Compile Include="Resources\TagLib\Xmp\XmpNodeType.cs" />
+    <Compile Include="Resources\TagLib\Xmp\XmpNodeVisitor.cs" />
+    <Compile Include="Resources\TagLib\Xmp\XmpTag.cs" />
+    <Compile Include="ViewModel\LibraryViewModel.cs" />
+    <Compile Include="View\deletePlaylist.xaml.cs">
+      <DependentUpon>deletePlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\openPlaylist.xaml.cs">
+      <DependentUpon>openPlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\removeClipFromPlaylist.xaml.cs">
+      <DependentUpon>removeClipFromPlaylist.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\addClipToPlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\deletePlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\AudioClip.cs" />
+    <Compile Include="Model\Clip.cs" />
+    <Compile Include="Model\PictureClip.cs" />
+    <Compile Include="Model\Playlist.cs" />
+    <Compile Include="Model\VideoClip.cs" />
+    <Compile Include="ViewModel\AudioViewModel.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="ViewModel\ManagerViewModel.cs" />
+    <Compile Include="ViewModel\PictureViewModel.cs" />
+    <Compile Include="ViewModel\PlaylistViewModel.cs" />
+    <Compile Include="ViewModel\VideoViewModel.cs" />
+    <Compile Include="View\addClipToPlaylist.xaml.cs">
+      <DependentUpon>addClipToPlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\openPlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\removeClipFromPlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\whiteground\eject.png" />
+    <Resource Include="Assets\whiteground\end.png" />
+    <Resource Include="Assets\whiteground\fastforward.png" />
+    <Resource Include="Assets\whiteground\pause.png" />
+    <Resource Include="Assets\whiteground\play.png" />
+    <Resource Include="Assets\whiteground\record.png" />
+    <Resource Include="Assets\whiteground\repeat.png" />
+    <Resource Include="Assets\whiteground\rewind.png" />
+    <Resource Include="Assets\whiteground\shuffle.png" />
+    <Resource Include="Assets\whiteground\start.png" />
+    <Resource Include="Assets\whiteground\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon32.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

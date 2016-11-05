@@ -1,0 +1,19 @@
+﻿New Windows Media Player
+
+Voci les features de notre player:
+
+Outil de recherche avancé
+Mode plein écran + boutons de contrôles qui s'affichent au hover de souris
+Visualisation de vidéos Youtube
+Resize
+Design MVVM
+Edition et suppression de playlists
+Visualisation de la playlist en cours et selection des fichiers à lire au clic
+Design propre + logo au démarrage
+Choix si l'on souhaite recharger les librairies ou pas.
+Boutons précédent et suivant.
+
+schilt_a
+devos_t
+dray_m
+naciri_t
